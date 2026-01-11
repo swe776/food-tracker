@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>75 Hard Food Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>🍎 75 Hard Food Tracker</h1>
+    </header>
+
+    <!-- Add Food to Database -->
+    <section class="card">
+      <h2>Add Food to Database</h2>
+      <div class="input-group">
+        <input type="text" id="dbFoodName" placeholder="Food Name" required>
+        <input type="number" id="dbServingGrams" placeholder="grams" min="1" required>
+        <input type="number" id="dbCalories" placeholder="Calories" min="0" required>
+        <input type="number" id="dbProtein" placeholder="Protein" min="0" required>
+        <button class="btn" onclick="addFoodToDB()">Add</button>
+      </div>
+    </section>
+
+    <!-- Food Database Table -->
+    <section class="card">
+      <h2>Food Database</h2>
+      <table id="dbTable">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Serving (g)</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Add Food to Daily Log -->
+    <section class="card">
+      <h2>Add Food to Daily Log</h2>
+      <div class="input-group">
+        <select id="foodSelect">
+          <option value="">-- Select Food --</option>
+        </select>
+        <input type="number" id="grams" placeholder="grams" min="1" required>
+        <button class="btn" onclick="addFoodToDay()">Add</button>
+      </div>
+    </section>
+
+    <!-- Daily Log Table -->
+    <section class="card">
+      <h2>Daily Log</h2>
+      <table id="foodTable">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Grams</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Progress Bars -->
+      <div class="totals">
+        <div class="progress">
+          <label>Calories: <span id="totalCalories">0</span>/1250</label>
+          <div class="progress-bar">
+            <div id="calProgress"></div>
+          </div>
+        </div>
+
+        <div class="progress">
+          <label>Protein: <span id="totalProtein">0</span>/85g</label>
+          <div class="progress-bar">
+            <div id="protProgress"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
